@@ -1,0 +1,514 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    height:1000px;
+    background-color: #0c111b !important;
+    position: relative;
+    font-family: roboto, sans-serif;
+}
+.navbar { 
+    height:80px;
+    width:100%;
+    position:fixed;
+    margin-bottom: 0;
+    top:0;
+    left:0;
+    z-index:9;
+    display:flex;
+    align-items: center;
+    padding:2%;
+    background-color: #0c111b;
+   
+}
+.left-container{
+    display: flex;
+    align-items: center;
+}
+.hamburger{
+    height:21px;
+    width:22px;
+    margin:20px;
+    background:transparent;
+    opacity:0.6;
+}
+
+.logo{
+    height:46px;
+    padding-bottom: 10px;
+}
+.hamburger:hover, .logo:hover{
+    cursor: pointer;
+}
+.nav-links{
+    /* margin-top:10px; */
+    font-size: 16px;
+    display:flex;
+    align-items: center;
+    /* removes list style bullets */
+    list-style: none;
+}
+
+.nav-items a{
+    text-decoration: none !important;
+    padding-left: 20px;
+    text-transform: capitalize;
+    color:#fff;
+    opacity:0.9;
+}
+.nav-items a:hover{
+    color:#fff !important;
+    opacity:0.8;
+}
+/* CSS trick to align element on the right side 
+    display:block;
+    margin-left:auto; */
+.right-container{
+    display:flex;
+    align-items: center;  
+    margin-left:auto;  
+}
+
+.search-container{
+    display:flex;
+    border-bottom:1px solid  #fff;
+    background:transparent;
+    margin-right: 10px;
+}
+.search-container:focus{
+    border-bottom:1px solid  #1f80e0;
+}
+.search-box{
+    border:none;
+    /* border-bottom:1px solid #fff; */
+    background:transparent;
+    text-transform: capitalize;
+    font-weight: 500;
+    color:white;
+    height:30px;
+    font-size: 16px;
+    outline: none;
+    width:250px;
+    transition:0.5s;
+}
+.search-icon{
+    height:16px;
+    margin-top:8px ;
+}
+.search-box:focus{
+    width:400px;
+    border-color: #1f80e0;
+}
+
+.sub-btn{
+    background-color: #1f80e0;
+    border:none;
+    color:#fff;
+    height:32px;
+    padding: 0 20px;
+    border-radius: 5px;
+    /* outline border */
+    outline: none;
+    font-weight: 700;
+    /* to change text as we want */
+    text-transform: uppercase;
+    font-size: 12px;
+    margin:0 10px;
+}
+
+.login{
+    text-decoration: none !important;
+    font-size: 16px;
+    color:#fff;
+    font-weight: 500;
+    text-transform: uppercase;   
+}
+
+.login:hover{
+    color:white;
+    opacity:0.9;
+}
+/* To make an image center
+    pos:abs;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+*/
+.slider-container{
+    width:100%;
+    height:450px;
+    position: relative;
+    margin-top:80px;
+    /* overflow: hidden; */
+}
+.slide-container{
+    /* width:94%;
+    height:450px;
+    position: relative;
+    display:flex;
+    align-items: center;
+     */
+     /*  position:relative;
+    width:100%;
+    height:450px;
+    display:flex;
+    So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, 
+    margin:0 auto;
+    align-items: center;
+    The auto value is similar to scroll , but it adds scroll bars only when necessary: 
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;to get smooth effect
+    */
+    position:relative;
+    width:100%;
+    height:450px;
+    display:flex;
+    /* So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, */
+    margin:0 auto;
+    align-items: center;
+    /* The auto value is similar to scroll , but it adds scroll bars only when necessary: */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;/*to get smooth effect*/ 
+    padding-left:40px;
+}
+.slide-container::-webkit-scrollbar{
+    display:none;
+}
+.prev-button,.next-button{
+    position:absolute;
+    top:0;
+    width:3%;
+    height:100%;
+    z-index:2;
+    border:none;
+    cursor: pointer;
+    outline:none;
+}
+.prev-button{
+    left:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.next-button{
+    right:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.prev-button img,.next-button img{
+    width:25px;
+    height:30px;
+    opacity:0;
+}
+.prev-button:hover img,.next-button:hover img{
+    opacity:1;
+    cursor: pointer;
+}
+
+.c-container{
+    position:relative;
+    min-width:94%;
+    width:94%;
+    height:100%;
+    border-radius: 5px;
+    margin:0 auto;
+    margin-right: 20px;
+}
+
+.slider{
+    height:100%;
+    width:100%;
+    position: relative;
+    background-color: #000000;
+}
+
+.slide-content{
+    width:30%;
+    height:100%;
+    padding-left:30px;
+    padding-top:50px;
+    display:inline-block;
+    background-color: #000000;
+    vertical-align: top;
+    background: linear-gradient(to right,rgba(4,8,15,0), #192133 99%);
+}
+.slide-img{
+    width:69%;
+    display:inline-block;
+    background: linear-gradient(to left,rgba(4,8,15,0), #192133 90%);
+}
+.img{
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+}
+.name1{
+    color:#fff;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+.description1{
+    color:#fff;
+    font-size: 16px;
+    text-transform: capitalize;
+    /* background: linear-gradient(to bottom,rgba(4,8,15,0), #192133 90%); */
+}
+
+
+/* Movie Cards */
+.video-cards-container{
+    position: relative;
+    width:92%;
+    height:150px;
+    margin:40px auto;
+    /* To perfectly align cards */
+    display:flex;
+    justify-content: space-between;
+}
+
+.video-card{
+    position: relative;
+    width: calc(100%/5 - 10px);
+    height:100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video-card-img,
+.card-video{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.card-video{
+    /* so this will be under the image */
+    position:absolute;
+    object-fit: cover;
+
+}
+.video-card:hover{
+    cursor: pointer;
+}
+.video-card:hover .video-card-img{
+    display:none;
+    
+}
+/* Movies List */
+.movies{
+    /* background-color: rgb(8, 27, 21); */
+    width:100%;
+    height:100%;
+}
+
+.title{
+    color:#fff;
+    opacity:0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.movies-list{
+    width:100%;
+    height:220px;
+    position:relative;
+    /* T L-R B */
+    margin:10px 0px 20px;
+    /* background-color: coral; */
+}
+.card-container{
+    position:relative;
+    width:94%;
+    padding-left: 10px;
+    height:220px;
+    display:flex;
+    /* So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, */
+    margin:0 auto;
+    align-items: center;
+    /* The auto value is similar to scroll , but it adds scrollbars only when necessary: */
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;/*to get smooth effect*/
+    /* background-color: chartreuse; */
+}
+.card-container::-webkit-scrollbar{
+    display:none;
+}
+
+.card{
+    position:relative;
+    min-width:138px;
+    width:138px;
+    height:200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+    background-color: #000;
+}
+.card-img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+.card:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.card:hover .card-body{
+    opacity:1;
+}
+.card-body{
+    opacity:0;
+    width:100%;
+    height:100%;
+    /* it will be over the img */
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    padding: 10px;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #192133 90%);
+    transition: 0.5s;
+}
+
+.name{
+    color:#fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top:55%;
+    text-transform: capitalize;
+}
+.description{
+    color:#fff;
+    font-size: 11px;
+    /* If there are two values, the top and bottom margins are set to the first value and the right and left margins are set to the second.
+       If there are three values, the top is set to the first value, the left and right are set to the second, and the bottom is set to the third.
+       If there are four values, they apply to the top, right, bottom, and left, respectively. */
+    font-weight: 500;
+    opacity:0.8;
+}
+/* .watchlist-btn,.watchmovie-btn{
+    position: relative;
+    color:rgba(255,255,255,0.5);
+    width:100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    background: none;
+    border:none;
+    outline:none;
+    padding:5px 5px;
+    cursor:pointer;
+    border-radius: 5px;
+} */
+
+.watchlist-btn,.watchmovie-btn{
+    position: relative;
+    color:rgba(255,255,255,0.5);
+    width:100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: right; 
+    font-size: 9px; 
+    background: none;
+    border:none;
+    padding:5px 5px;
+    cursor:pointer;
+    border-radius: 5px;
+}
+.watchmovie-btn{
+    text-align:center; 
+    margin-bottom: 0;
+}
+/* before is a pseudo element to add image before it */
+/* .watchlist-btn::before,.watchmovie-btn::before{
+    content:'';
+    position:absolute;
+    top:-5px;
+    left:-11px;
+    height:30px;
+    width:30px;
+    background-image: url(images/add.png);
+    Resize the background image to make sure the image is fully visible.
+    background-size: cover;
+    transform:scale(0.4);
+} */
+.watchlist-btn::before,.watchmovie-btn::before{
+    content:'';
+    position:absolute;
+    top:-6.5px;
+    left:-5px;
+    height:35px;
+    width:35px;
+    background-image: url(./images/add.png);
+    /* Resize the background image to make sure the image is fully visible. */
+    background-size: cover;
+    transform:scale(0.3);
+}
+.watchmovie-btn::before{
+    background-image: url(./images/play.png);
+}
+.watchlist-btn:hover,.watchmovie-btn:hover{
+    /* color:#fff; */
+    background-color: rgba(255,255,255,0.1);
+}
+
+.pre-button,.nxt-button{
+    position:absolute;
+    top:0;
+    width:5%;
+    height:100%;
+    z-index:2;
+    border:none;
+    cursor: pointer;
+    outline:none;
+}
+.pre-button{
+    left:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.nxt-button{
+    right:0;
+    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
+}
+.pre-button img,.nxt-button img{
+    width:15px;
+    height:20px;
+    opacity:0;
+}
+.pre-button:hover img,.nxt-button:hover img{
+    opacity:1;
+    cursor: pointer;
+}
+
+#coupon{
+    height:450px;
+    width:280px;
+    z-index: 0;
+    position: absolute;
+    left:50%;
+    top:25%;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 1px 10px 10px lightgray;
+    /* background-image: url('Avatar.webp'); */
+}
+#coupon img{
+    height:100%;
+    width:100%;
+   
+}
+.close{
+    position: absolute;
+    color:white;
+    top:0;
+    left:0;
+    margin:4px;
+}
+.close:hover{
+    cursor: pointer;
+}
