@@ -59,6 +59,7 @@ body{
     text-transform: capitalize;
     color:#fff;
     opacity:0.9;
+    vertical-align:middle;
 }
 .nav-items a:hover{
     color:#fff !important;
@@ -138,125 +139,66 @@ body{
     top:50%;
     transform:translate(-50%,-50%);
 */
-.slider-container{
-    width:100%;
-    height:450px;
-    position: relative;
-    margin-top:80px;
-    /* overflow: hidden; */
-}
-.slide-container{
-    /* width:94%;
-    height:450px;
-    position: relative;
-    display:flex;
-    align-items: center;
-     */
-     /*  position:relative;
-    width:100%;
-    height:450px;
-    display:flex;
-    So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, 
-    margin:0 auto;
-    align-items: center;
-    The auto value is similar to scroll , but it adds scroll bars only when necessary: 
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-behavior: smooth;to get smooth effect
-    */
-    position:relative;
-    width:100%;
-    height:450px;
-    display:flex;
-    /* So in margin: 0 auto, the top/bottom margin is 0, and the left/right margin is auto, */
-    margin:0 auto;
-    align-items: center;
-    /* The auto value is similar to scroll , but it adds scroll bars only when necessary: */
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;/*to get smooth effect*/ 
-    padding-left:40px;
-}
-.slide-container::-webkit-scrollbar{
-    display:none;
-}
-.prev-button,.next-button{
-    position:absolute;
-    top:0;
-    width:3%;
-    height:100%;
-    z-index:2;
-    border:none;
-    cursor: pointer;
-    outline:none;
-}
-.prev-button{
-    left:0;
-    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
-}
-.next-button{
-    right:0;
-    background: linear-gradient(to bottom,rgba(4,8,15,0), #0c111b00);
-}
-.prev-button img,.next-button img{
-    width:25px;
-    height:30px;
-    opacity:0;
-}
-.prev-button:hover img,.next-button:hover img{
-    opacity:1;
-    cursor: pointer;
-}
 
-.c-container{
-    position:relative;
-    min-width:94%;
-    width:94%;
-    height:100%;
-    border-radius: 5px;
-    margin:0 auto;
-    margin-right: 20px;
+/* Carousel */
+.carousel-container{
+    position: relative;
+    width:100%;
+    height:450px;
+    overflow-x: hidden;
+    padding:20px 0;
+    margin-top: 80px;
 }
-
+.carousel{
+    display:flex;
+    height:100%;
+    width:92%;
+    background-color: #000;
+    margin:auto;/*places center*/
+}
 .slider{
-    height:100%;
+     /* use flex 0 0 auto value, to create a slide of custom width; 
+        otherwise bcz, of display flex, the slide wil start to shrink*/
+    flex: 0 0 auto;
+    margin-right: 30px;
+    position:relative;
+    /* background-color: #fff; */
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 5px;
     width:100%;
-    position: relative;
-    background-color: #000000;
-}
-
-.slide-content{
-    width:30%;
     height:100%;
-    padding-left:30px;
-    padding-top:50px;
-    display:inline-block;
-    background-color: #000000;
-    vertical-align: top;
-    background: linear-gradient(to right,rgba(4,8,15,0), #192133 99%);
+    left:0;
+    transition:1s;
+    overflow: hidden;
 }
-.slide-img{
-    width:69%;
-    display:inline-block;
-    background: linear-gradient(to left,rgba(4,8,15,0), #192133 90%);
-}
-.img{
+.slider img{
+    width:70%;
     height:100%;
-    width: 100%;
+    /* object fit property is used to fit any object inside its parent object */
     object-fit: cover;
+    display:block;
+    /* to align it right, use margin-left property */
+    margin-left: auto;
 }
-.name1{
-    color:#fff;
-    font-size: 30px;
+.slide-content{
+    position:absolute;
+    width:50%;
+    color:white;
+    height:100%; 
+    background: linear-gradient(to right,#030b17 80%,#0c111b00);
+}
+.movie-title{
+    padding-left: 50px;
     text-transform: capitalize;
+    margin-top: 80px;
 }
-.description1{
-    color:#fff;
-    font-size: 16px;
-    text-transform: capitalize;
-    /* background: linear-gradient(to bottom,rgba(4,8,15,0), #192133 90%); */
+.movie-des{
+    width:80%;
+    line-height: 25px;
+    padding-left: 50px;
+    margin-top: 30px;
+    opacity:0.8;
 }
-
 
 /* Movie Cards */
 .video-cards-container{
