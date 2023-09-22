@@ -60,9 +60,10 @@ body{
     color:#fff;
     opacity:0.9;
     vertical-align:middle;
+    transition:0.2s;
 }
 .nav-items a:hover{
-    color:#fff !important;
+    color:#1f80e0 !important;
     opacity:0.8;
 }
 /* CSS trick to align element on the right side 
@@ -76,16 +77,17 @@ body{
 
 .search-container{
     display:flex;
-    border-bottom:1px solid  #fff;
+    /* border-bottom:1px solid  #fff; */
     background:transparent;
     margin-right: 10px;
 }
-.search-container:focus{
-    border-bottom:1px solid  #1f80e0;
-}
+/* .search-container:focus{
+    border-bottom:0 solid  #fff;
+    border-color: #1f80e0;
+} */
 .search-box{
     border:none;
-    /* border-bottom:1px solid #fff; */
+    border-bottom:1.3px solid #fff;
     background:transparent;
     text-transform: capitalize;
     font-weight: 500;
@@ -94,13 +96,14 @@ body{
     font-size: 16px;
     outline: none;
     width:250px;
-    transition:0.5s;
+    transition:0.3s;
 }
 .search-icon{
     height:16px;
     margin-top:8px ;
 }
 .search-box:focus{
+    /* border-bottom:1.4px solid #fff;  */
     width:400px;
     border-color: #1f80e0;
 }
@@ -119,6 +122,8 @@ body{
     text-transform: uppercase;
     font-size: 12px;
     margin:0 10px;
+    cursor: pointer;
+    transition:0.2s;
 }
 
 .login{
@@ -126,12 +131,16 @@ body{
     font-size: 16px;
     color:#fff;
     font-weight: 500;
-    text-transform: uppercase;   
+    text-transform: uppercase; 
+    transition:0.2s;  
 }
 
 .login:hover{
-    color:white;
-    opacity:0.9;
+    color:#1f80e0;
+    opacity:0.8;
+}
+.sub-btn:hover{
+    opacity:0.8;
 }
 /* To make an image center
     pos:abs;
